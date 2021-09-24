@@ -1,0 +1,30 @@
+@font-face {
+    font-family: 'SemiBold';
+    src: url('./SemiBold.ttf');
+}
+
+@font-face {
+    font-family: 'Thin';
+    src: url('./Thin.ttf');
+}
+
+@font-face {
+    font-family: Bold;
+    src: url('./Bold.ttf');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "123";
+    src: url('./123.ttf');
+}
+
+@font-face {
+    font-family: CN-Bold;
+    src: url('./CN-Bold.otf');
+  }
+
+  @font-face {
+    font-family: CN-Normal;
+    src: url('./CN-Normal.otf');
+  }
