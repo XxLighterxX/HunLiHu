@@ -1,14 +1,18 @@
 import axios from 'axios'
+import qs from 'qs'
 
-var baseURLStr = "//yourong.yourongdaijian.com"
+var baseURLStr = "//devdb.hunlihu.com/hlnh5"
 
 //创建一个axios对象
  const instance = axios.create({
-    baseURL: "",
+    baseURL: "/",
     timeout: 10000,
     headers:{},    
+    withCredentials: true,
 })
 
+// // 模拟Cookie
+// let testCookie = 'JSESSIONID=4626EC6A753D9213BC9C61A2ECE7AA0D'
 
 //请求拦截
 //所有网络请求都会走这个方法
@@ -18,6 +22,7 @@ instance.interceptors.request.use(
         // console.log(config)
         // console.groupEnd()
         // config.headers.token = localStorage.getItem('token')
+        config.headers['Authorization']=  localStorage.getItem('token')
         // config.headers['Content-Type'] = 'application/json'
         config.headers['Content-Type'] = 'application/x-www-form-urlencoded'
         // config.headers['Access-Control-Allow-Methods'] = 'POST, GET, OPTIONS, DELETE'
@@ -43,6 +48,7 @@ instance.interceptors.response.use(
         return Promise.reject(err);
     }
 )
+
 
 // // 获取Token
 // export function PostToken(url, params) {

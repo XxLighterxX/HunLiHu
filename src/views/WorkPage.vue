@@ -75,15 +75,16 @@ export default {
       transition: 0.5s;
     }
     .WorkLeftPutMenuNorm {
-      width: 300px;
+      width: 299px;
       height: 100%;
-      background-color: red;
+      border-right: 1px solid #ccd5db;
+    //   background-color: red;
       transition: 0.5s;
     }
     .WorkLeftPutMenuActive {
       width: 0px;
       height: 100%;
-      background-color: blue;
+      border-right: 1px solid transparent;
       transition: 0.5s;
     }
     .WorkCenterWorkBox {
@@ -91,7 +92,7 @@ export default {
         margin: 0 auto;
         position: relative;
         right: 120px;
-        top: 130px;
+        top: 15%;
         z-index: 0;
     }
     .WorkRightMenu {

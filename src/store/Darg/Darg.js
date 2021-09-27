@@ -1,7 +1,7 @@
 import axios from 'axios'
 import createPersistedState from "vuex-persistedstate"
 import Vuex from 'vuex'
-import { _getTestJson } from "../../api/testApi";
+import { _getTestJson } from "../../api/CommonApi";
 
 const darg = {
     namespaced: true,

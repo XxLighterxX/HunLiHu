@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 import createPersistedState from "vuex-persistedstate"
 import darg from './Darg/Darg.js'
 import WorkPageSwitchBtn from './WorkPage/WorkPage.js'
+import indexPageData from './indexPage/indexPage.js'
 
 Vue.use(Vuex)
 
@@ -17,7 +18,8 @@ export default new Vuex.Store({
   },
   modules: {
     darg,
-    WorkPageSwitchBtn
+    WorkPageSwitchBtn,
+    indexPageData
   },
   plugins: [createPersistedState({
     storage:window.sessionStorage,
@@ -25,7 +27,8 @@ export default new Vuex.Store({
         // console.log(val.darg.test1)
         return {
             // 存放数据
-            val: val.darg
+            val: val.darg,
+            indexPageData:val.indexPageData
         }
     }
 })]

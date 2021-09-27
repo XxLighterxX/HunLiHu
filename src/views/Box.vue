@@ -33,7 +33,6 @@
 </template>
 
 <script>
-import { _getTestJson } from "../api/testApi";
 import { addDate } from "../utils/utils.js";
 import { mapState, mutations, actions, mapActions, mapMutations } from "vuex";
 import Darg from "./Demo2.vue";
@@ -102,9 +101,9 @@ export default {
   height: 100%;
   display: flex;
   .box {
-    height: 100%;
+    height: 486px;
     margin: 0 auto;
-    width: 400px;
+    width: 300px;
     border: 1px solid rgb(143, 141, 141);
     border-radius: 10px;
     background-color: white;

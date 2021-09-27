@@ -17,19 +17,19 @@ export default {
     return {
       menuList: [
         {
-          name: "图文",
+          name: "页面1",
         },
         {
-          name: "作者",
+          name: "页面2",
         },
         {
-          name: "画图",
+          name: "页面3",
         },
         {
-          name: "推荐",
+          name: "页面4",
         },
         {
-          name: "热门",
+          name: "页面5",
         },
       ],
     };
