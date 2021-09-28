@@ -5,7 +5,6 @@ import { dev_Url } from '../../utils/port'
 
 //复制一份请柬
 function _copyshow(id) {
-    // 账号密码错误报404
     return request({
         baseURL: '',
         url: `/api/api/show/copyshow`,
@@ -16,7 +15,6 @@ function _copyshow(id) {
 
 // 新建一份请柬
 function _createshow() {
-    // 账号密码错误报404
     return request({
         baseURL: '',
         url: `/api/api/show/createshow`,
@@ -26,7 +24,6 @@ function _createshow() {
 }
 // 删除请柬
 function _deleteshow(id) {
-    // 账号密码错误报404
     return request({
         baseURL: '',
         url: `/api/api/show/deleteshow`,
@@ -36,7 +33,6 @@ function _deleteshow(id) {
 }
 // 开启/关闭请柬
 function _enableshow() {
-    // 账号密码错误报404
     return request({
         baseURL: '',
         url: `/api/api/show/enableshow`,
@@ -47,7 +43,6 @@ function _enableshow() {
 
 // 获取请柬属性
 function _getshowpro(id) {
-    // 账号密码错误报404
     return request({
         baseURL: '',
         url: `/api/api/show/getshowpro`,
@@ -58,7 +53,6 @@ function _getshowpro(id) {
 
 // 获取请柬列表
 function _getshows() {
-    // 账号密码错误报404
     return request({
         baseURL: '',
         url: `/api/api/show/getshows`,
@@ -69,7 +63,6 @@ function _getshows() {
 
 // 保存请柬属性   还没有测试成功
 function _saveshowpro() {
-    // 账号密码错误报404
     return request({
         baseURL: '',
         url: `/api/api/show/saveshowpro`,

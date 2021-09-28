@@ -52,14 +52,20 @@ export default {
     ...mapState("WorkPageSwitchBtn", ["isLeftMenu"]),
   },
   created() {},
-  mounted() {},
-  methods: {},
+  mounted() {
+      this.GetPageData(349000)
+  },
+  methods: {
+      ...mapActions("WorkPageSwitchBtn", ["GetPageData"]),
+  },
 };
 </script>
 <style lang="less" scoped>
 .WorkPage {
-  height: calc(100% - 70px);
-  .WorkHeader{}
+  height: calc(100%);
+  .WorkHeader{
+      margin-bottom: 70px;
+  }
   .WorkModel {
     height: 100%;
     width: 100%;
@@ -68,7 +74,7 @@ export default {
      background-color: #f1f4f5;
     .WorkLeftMenu {
       height: 100%;
-      width: 79px;
+      width: 119px;
       background-color: rgb(255, 255, 255);
       border-right: 1px solid #ccd5db;
       box-shadow: -1px 0 0 0 #e6ebed;
@@ -78,7 +84,7 @@ export default {
       width: 299px;
       height: 100%;
       border-right: 1px solid #ccd5db;
-    //   background-color: red;
+      background-color: white;
       transition: 0.5s;
     }
     .WorkLeftPutMenuActive {
@@ -91,7 +97,7 @@ export default {
         height: 70%;
         margin: 0 auto;
         position: relative;
-        right: 120px;
+        right: 50px;
         top: 15%;
         z-index: 0;
     }

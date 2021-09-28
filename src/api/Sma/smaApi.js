@@ -10,7 +10,6 @@ import { dev_Url } from '../../utils/port'
 
 //获取page下素材
 function _deletepagesmaterials() {
-    // 账号密码错误报404
     return request({
         baseURL: '',
         url: `/api/api/sma/deletepagesmaterials`,
@@ -21,7 +20,6 @@ function _deletepagesmaterials() {
 
 // 获取page下素材
 function _getpagesmaterials() {
-    // 账号密码错误报404
     return request({
         baseURL: '',
         url: `/api/api/sma/getpagesmaterials`,
@@ -32,7 +30,6 @@ function _getpagesmaterials() {
 
 // 保存素材
 function _savepagesmaterials() {
-    // 账号密码错误报404
     return request({
         baseURL: '',
         url: `/api/api/sma/savepagesmaterials`,

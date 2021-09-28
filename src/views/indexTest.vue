@@ -1,9 +1,9 @@
 <template>
   <div class="ListTest">
     <div class="header">
-        <WorkBenchHeader></WorkBenchHeader>
+        <IndexHeader></IndexHeader>
     </div>
-    <div class="contentBox">
+    <div class="contentBox" style="">
         <IndexAsider></IndexAsider>
         <div class="content">
            <IndexContent></IndexContent>
@@ -13,13 +13,13 @@
 </template>
 
 <script>
-import WorkBenchHeader from '../components/workBench/workBenchHeader.vue'
+import IndexHeader from '../components/index/indexHeader.vue'
 import IndexAsider from '../components/index/indexAsider.vue'
 import IndexContent from '../components/index/indexContent.vue'
 import { mapState, mutations, actions, mapActions, mapMutations } from "vuex";
 export default {
   components: {
-      WorkBenchHeader,
+      IndexHeader,
       IndexAsider,
       IndexContent
   },
@@ -55,10 +55,10 @@ export default {
     width: 100%;
 }
 .contentBox{
-    margin-top: 70px;
+    margin-top: 100px;
     display: flex;
     .content{
-        margin:1em 0 0 300px;
+        margin:1em 20px 0 300px;
     }
 }
 </style>

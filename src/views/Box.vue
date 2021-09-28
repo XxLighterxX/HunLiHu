@@ -16,7 +16,7 @@
     <div class="box">
       <Darg v-for="(item,index) in dargVal" :key="item.x + item.y" :dargval="item" :index='index' @getIndex='getIndex'></Darg>
     </div>
-     <!-- <div class="btnBox">
+    <!-- <div class="btnBox">
       <a-space>
         <a-button type="primary" @click="addBtn">
           新增组件
@@ -48,7 +48,7 @@ export default {
     };
   },
   created() {
-    this.AXIOS_GETTEST();
+    // this.AXIOS_GETTEST();
   },
   computed: {
     ...mapState({
@@ -59,9 +59,7 @@ export default {
     // console.log(JSON.parse(sessionStorage.getItem("vuex")).val.test1.test);
   },
   methods: {
-    ...mapActions({
-      ...mapActions("darg", ["AXIOS_GETTEST"]),
-    }),
+    ...mapActions("darg", ["AXIOS_GETTEST"]),
     ...mapMutations({
       ...mapMutations("darg", ["GET_DARGDATA"]),
     }),

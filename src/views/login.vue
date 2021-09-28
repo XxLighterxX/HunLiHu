@@ -38,7 +38,7 @@ export default {
       _userLogin({ user: this.user, password: this.password }).then((res) => {
           if(res.data.token != null){
               localStorage.setItem("token", res.data.token);
-              this.$router.push({name:'ListTest'})
+              this.$router.push({name:'indexTest'})
           }else{
               alert('请重新输入')
           }

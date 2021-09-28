@@ -1,3 +1,4 @@
+import {_addpage, _copypage, _deletepage, _getpages, _savepage, _savepagesorder } from "../../api/Page/pageApi";
 
 
 const WorkPageSwitchBtn = {
@@ -34,16 +35,31 @@ const WorkPageSwitchBtn = {
         SET_LeftMenu(state, index, options) {
             state.isLeftMenuIndex = index.index
             //    关闭打开逻辑
-            if(index.type == true && state.isLeftMenuIndex == index.index){
+            if (index.type == true && state.isLeftMenuIndex == index.index) {
                 state.isLeftMenu = false
                 console.log('关闭')
-            }else if (state.isLeftMenu == false){
+            } else if (state.isLeftMenu == false) {
                 state.isLeftMenu = true
             }
         },
+        // 获取page数据
+        GET_PageData(state,playlod){
+
+        }
     },
     actions: {
-
+        // 获取页面数据
+        GetPageData({ commit },id) {
+            // console.log(id)
+            _getpages({id})
+            .then(
+                (res) => {
+                    console.log(res.data)
+                    // console.log(response.data)
+                    commit('GET_PageData', { PageList: res.data })
+                }
+            );
+        },
     }
 }
 

@@ -1,5 +1,5 @@
 <template>
-  <div id="app" :style="{maxWidth:windowWidth + 'px'}">
+  <div id="app" :style="{maxWidth:windowWidth + 'px',height:windowHeight + 'px'}">
 
     <router-view />
   </div>

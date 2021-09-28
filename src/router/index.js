@@ -16,9 +16,14 @@ const routes = [
         component: () => import("../views/ApiTestView.vue"),
     },
     {
-        path: '/ListTest',
-        name: 'ListTest',
-        component: () => import("../views/ListTest.vue"),
+        path: '/indexTest',
+        name: 'indexTest',
+        component: () => import("../views/indexTest.vue"),
+    },
+    {
+        path: '/WorkPage',
+        name: 'WorkPage',
+        component: () => import("../views/WorkPage.vue"),
     },
     {
         path: '/index',

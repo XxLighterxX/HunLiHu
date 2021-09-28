@@ -46,12 +46,13 @@ function _deletepage(id) {
 }
 
 // 获取page页面  返回空数组
-function _getpages() {
+function _getpages(id) {
+    // console.log(id.id)
     return request({
         baseURL: '',
         url: `/api/api/page/getpages`,
         method: "post",
-        data: qs.stringify({ showId: 348983 }),
+        data: qs.stringify({ showId: id.id }),
     });
 }
 

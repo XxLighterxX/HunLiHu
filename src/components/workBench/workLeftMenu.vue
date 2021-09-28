@@ -17,19 +17,22 @@ export default {
     return {
       menuList: [
         {
-          name: "页面1",
+          name: "页面",
         },
         {
-          name: "页面2",
+          name: "页面",
         },
         {
-          name: "页面3",
+          name: "全局设置",
         },
         {
-          name: "页面4",
+          name: "全局设置",
         },
         {
-          name: "页面5",
+          name: "全局设置",
+        },
+        {
+          name: "全局设置",
         },
       ],
     };
