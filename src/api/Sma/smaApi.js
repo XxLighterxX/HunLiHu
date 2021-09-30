@@ -12,7 +12,7 @@ import { dev_Url } from '../../utils/port'
 function _deletepagesmaterials() {
     return request({
         baseURL: '',
-        url: `/api/api/sma/deletepagesmaterials`,
+        url: dev_Url + `/api/sma/deletepagesmaterials`,
         method: "post",
         data:'',
     });
@@ -22,7 +22,7 @@ function _deletepagesmaterials() {
 function _getpagesmaterials() {
     return request({
         baseURL: '',
-        url: `/api/api/sma/getpagesmaterials`,
+        url: dev_Url + `/api/sma/getpagesmaterials`,
         method: "post",
         data:'',
     });
@@ -32,7 +32,7 @@ function _getpagesmaterials() {
 function _savepagesmaterials() {
     return request({
         baseURL: '',
-        url: `/api/api/sma/savepagesmaterials`,
+        url: dev_Url + `/api/sma/savepagesmaterials`,
         method: "post",
         data:'',
     });

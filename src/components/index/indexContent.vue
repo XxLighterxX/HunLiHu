@@ -41,6 +41,48 @@
         </div>
       </div>
     </div>
+     <div v-if="listWidth != ''" class="list">
+      <div class="listTitle">
+        <h2>列表区域</h2>
+      </div>
+      <div v-if="listWidth != ''" class="listContent" :style="{maxWidth:listWidth}">
+        <div class="listGoods" v-for="(item,index) in this.indexList" :key="index">
+          <div class="listGoodsImg">
+            <img src="@/assets/image/index/listImg.jpg" alt="测试图片" height="100%" width="100%" @click="nextWorkPage(item.showId)">
+          </div>
+          <div class="listGoodsTitle">
+            <div class="top">
+              <h4 class="stitle">{{item.stitle}}</h4>
+              <p class="delBtn" @click="delBtn(item.showId)">删除</p>
+            </div>
+            <div class="bottom">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     <div v-if="listWidth != ''" class="list">
+      <div class="listTitle">
+        <h2>列表区域</h2>
+      </div>
+      <div v-if="listWidth != ''" class="listContent" :style="{maxWidth:listWidth}">
+        <div class="listGoods" v-for="(item,index) in this.indexList" :key="index">
+          <div class="listGoodsImg">
+            <img src="@/assets/image/index/listImg.jpg" alt="测试图片" height="100%" width="100%" @click="nextWorkPage(item.showId)">
+          </div>
+          <div class="listGoodsTitle">
+            <div class="top">
+              <h4 class="stitle">{{item.stitle}}</h4>
+              <p class="delBtn" @click="delBtn(item.showId)">删除</p>
+            </div>
+            <div class="bottom">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -65,7 +107,6 @@ export default {
   mounted() {
     //   console.log('this.$refs.barparent.$el.offsetWidth', this.$refs.header.offsetWidth)
     this.listWidth = this.$refs.header.offsetWidth + "px";
-    console.log(this.indexList);
   },
   methods: {
     ...mapActions("indexPageData", ["GetIndexData", "DelListData","GetShowsData"]),
@@ -75,9 +116,7 @@ export default {
     onSearch() {},
     // 进入工作台
     nextWorkPage(id) {
-        sessionStorage.removeItem('goods')
-        this.GetShowsData(id)
-        this.$router.push({name:'WorkPage'})
+        this.$router.push({name:'WorkPage',query:{showId:id}})
     },
     // 删除项目
     delBtn(id) {
@@ -116,7 +155,7 @@ export default {
       font-family: CN-Bold;
       display: flex;
       justify-content: space-between;
-      height: 500px;
+      
       margin-top: 50px;
       .listGoods {
         min-width: 200px;

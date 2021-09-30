@@ -1,5 +1,5 @@
 <template>
-  <div id="app" :style="{maxWidth:windowWidth + 'px',height:windowHeight + 'px'}">
+  <div id="app" :style="{maxWidth:windowWidth + 'px',height:windowHeight -1 + 'px'}">
 
     <router-view />
   </div>
@@ -13,18 +13,26 @@ export default {
     return {
       windowWidth: document.body.clientWidth, //实时屏幕宽度
       windowHeight: document.body.clientHeight, //实时屏幕高度
+      path:this.$route.path,
     };
   },
+  
+watch:{
+  path:function(){
+    // this.msg = '我改变了，新的msg为：'+msg;
+    // console.log(path)
+  }
+},
   created() {},
   mounted() {
-      this.hasScrollbar()
+    //   this.hasScrollbar()
   },
   methods: {
-    hasScrollbar() {
-      if(document.body.scrollHeight > (window.innerHeight || document.documentElement.clientHeight) === false){
-          console.log('2')
-      }
-    },
+    // hasScrollbar() {
+    //   if(document.body.scrollHeight > (window.innerHeight || document.documentElement.clientHeight) === false){
+    //       console.log('2')
+    //   }
+    // },
   },
 };
 </script>
@@ -32,8 +40,8 @@ export default {
 <style>
 #app {
   min-width: 1200px;
-  min-height: 1000px;
-  overflow: hidden;
+  min-height: 400px;
+  /* overflow: hidden; */
 }
 
 #nav {

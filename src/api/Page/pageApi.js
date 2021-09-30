@@ -16,9 +16,9 @@ function _addpage(id) {
     // 账号密码错误报404
     return request({
         baseURL: '',
-        url: `/api/api/page/addpage`,
+        url: dev_Url + `/api/page/addpage`,
         method: "post",
-        data: qs.stringify({ showId: 348983 }),
+        data: qs.stringify({ showId: 348983}),
     });
 }
 
@@ -28,41 +28,42 @@ function _copypage(id) {
     // 账号密码错误报404
     return request({
         baseURL: '',
-        url: `/api/api/page/copypage`,
+        url: dev_Url + `/api/page/copypage`,
         method: "post",
-        data: qs.stringify({...id}),
+        data: qs.stringify({ ...id }),
     });
 }
 
 // 删除一个空白页面
-function _deletepage(id) {
-    // 账号密码错误报404
+function _deletepage(delData) {
+     let {showId,pageId} = delData.delData
     return request({
         baseURL: '',
-        url: `/api/api/page/deletepage`,
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        url:  dev_Url + `/api/page/deletepage`,
         method: "post",
-        data: qs.stringify({...id}),
+        data: qs.stringify({ showId:showId,pageId:pageId }),
     });
 }
 
-// 获取page页面  返回空数组
+// 获取page页面  
 function _getpages(id) {
-    // console.log(id.id)
     return request({
         baseURL: '',
-        url: `/api/api/page/getpages`,
+        url: dev_Url + `/api/page/getpages`,
         method: "post",
         data: qs.stringify({ showId: id.id }),
     });
 }
 
 // 保存页面
-function _savepage() {
+function _savepage({ newData }) {
     return request({
         baseURL: '',
-        url: `/api/api/page/savepage`,
+        url:  dev_Url + `/api/page/savepage`,
+        headers: { 'Content-Type': 'application/json' },
         method: "post",
-        data: qs.stringify({ showId: 348983 }),
+        data: { showId: 349000, jsons: [{ "page_id": "1839591", "p_no": "1", "is_hide": "0" },{ "page_id": "1839591", "p_no": "1", "is_hide": "0" }, { "page_id": "1839590", "p_no": "2", "is_hide": "0" }, { "page_id": "1839589", "p_no": "3", "is_hide": "0" }, { "page_id": "1839592", "p_no": "4", "is_hide": "0" }, { "page_id": "1839607", "p_no": "5", "is_hide": "0" }, { "page_id": "1839614", "p_no": "6", "is_hide": "0" }, { "page_id": "1839617", "p_no": "7", "is_hide": "0" }, { "page_id": "1839618", "p_no": "8", "is_hide": "0" }, { "page_id": "1839619", "p_no": "9", "is_hide": "0" }, { "page_id": "1839622", "p_no": "10", "is_hide": "0" }] },
     });
 }
 
@@ -70,7 +71,7 @@ function _savepage() {
 function _savepagesorder() {
     return request({
         baseURL: '',
-        url: `/api/api/page/savepagesorder`,
+        url:  dev_Url + `/api/page/savepagesorder`,
         method: "post",
         data: '',
     });

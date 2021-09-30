@@ -11,23 +11,23 @@
       </div>
       <!-- 二级修改栏 -->
       <div :class="{'WorkLeftPutMenuNorm':isLeftMenu == true,'WorkLeftPutMenuActive':isLeftMenu == false}">
-
+          <LeftPutMenu></LeftPutMenu>
       </div>
       <!-- 二级修改栏 -->
       <!-- <div class="WorkLeftPutMenuNorm">
-
+              <LeftPutMenu></LeftPutMenu>
       </div> -->
       <!-- 中间绘图区域 -->
       <div class="WorkCenterWorkBox">
          <Work></Work>
       </div>
       <!-- 右侧工具栏 -->
-      <div class="WorkRightMenu">
-
+      <div class="WorkRight_Menu">
+               <RightMenu></RightMenu> 
       </div>
       <!-- 右侧小工具栏 -->
       <div class="WorkRightIconMenu">
-
+          
       </div>
     </div>
   </div>
@@ -36,6 +36,8 @@
 <script>
 import Header from "../components/workBench/workBenchHeader.vue";
 import LeftMenu from "../components/workBench/workLeftMenu.vue";
+import LeftPutMenu from '../components/workBench/WorkLeftPutMenu.vue'
+import RightMenu from '../components/workBench/workRightMenu.vue'
 import { mapState, mutations, actions, mapActions, mapMutations } from "vuex";
 import Work from "./Box.vue";
 export default {
@@ -43,17 +45,31 @@ export default {
     Header,
     Work,
     LeftMenu,
+    LeftPutMenu,
+    RightMenu
   },
   props: {},
   data() {
-    return {};
+    return {
+        NowPageData:'',
+    };
   },
   computed: {
-    ...mapState("WorkPageSwitchBtn", ["isLeftMenu"]),
+    ...mapState("WorkPageSwitchBtn", ["isLeftMenu",'PageData']),
   },
-  created() {},
+  beforeCreate(){
+       
+  },
+  created() {
+    
+  },
   mounted() {
-      this.GetPageData(349000)
+    //   获取页面数据
+      const id = this.$route.query.showId
+      this.GetPageData(id)
+  },
+  destroyed(){
+      
   },
   methods: {
       ...mapActions("WorkPageSwitchBtn", ["GetPageData"]),
@@ -62,9 +78,9 @@ export default {
 </script>
 <style lang="less" scoped>
 .WorkPage {
-  height: calc(100%);
+  height: calc(100% - 70px);
   .WorkHeader{
-      margin-bottom: 70px;
+      padding-bottom: 70px;
   }
   .WorkModel {
     height: 100%;
@@ -101,7 +117,7 @@ export default {
         top: 15%;
         z-index: 0;
     }
-    .WorkRightMenu {
+    .WorkRight_Menu {
       position: absolute;
       right: 0;
       height: 100%;

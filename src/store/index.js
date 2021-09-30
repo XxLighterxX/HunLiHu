@@ -27,8 +27,8 @@ export default new Vuex.Store({
         // console.log(val.darg.test1)
         return {
             // 存放数据
-            val: val.darg,
-            indexPageData:val.indexPageData
+            indexListData:val.indexPageData.indexList,
+            workPageData:val.WorkPageSwitchBtn.PageData
         }
     }
 })]

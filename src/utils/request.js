@@ -24,7 +24,7 @@ instance.interceptors.request.use(
         // config.headers.token = localStorage.getItem('token')
         config.headers['Authorization']=  localStorage.getItem('token')
         // config.headers['Content-Type'] = 'application/json'
-        config.headers['Content-Type'] = 'application/x-www-form-urlencoded'
+        // config.headers['Content-Type'] = 'application/x-www-form-urlencoded'
         // config.headers['Access-Control-Allow-Methods'] = 'POST, GET, OPTIONS, DELETE'
         // config.headers['Access-Control-Max-Age'] = '3600'
         // config.headers['Access-Control-Allow-Credentials'] = 'true'

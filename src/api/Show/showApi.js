@@ -7,7 +7,7 @@ import { dev_Url } from '../../utils/port'
 function _copyshow(id) {
     return request({
         baseURL: '',
-        url: `/api/api/show/copyshow`,
+        url:  dev_Url + `/api/show/copyshow`,
         method: 'post',
         data: qs.stringify({ showId: id.id,userId:id.user}),
     });
@@ -17,7 +17,7 @@ function _copyshow(id) {
 function _createshow() {
     return request({
         baseURL: '',
-        url: `/api/api/show/createshow`,
+        url: dev_Url + `/api/show/createshow`,
         method: 'post',
         data:'',
     });
@@ -26,7 +26,7 @@ function _createshow() {
 function _deleteshow(id) {
     return request({
         baseURL: '',
-        url: `/api/api/show/deleteshow`,
+        url: dev_Url + `/api/show/deleteshow`,
         method: 'post',
         data:qs.stringify({ showId:id.showId}),
     });
@@ -35,7 +35,7 @@ function _deleteshow(id) {
 function _enableshow() {
     return request({
         baseURL: '',
-        url: `/api/api/show/enableshow`,
+        url: dev_Url + `/api/show/enableshow`,
         method: 'post',
         data:'',
     });
@@ -45,7 +45,7 @@ function _enableshow() {
 function _getshowpro(id) {
     return request({
         baseURL: '',
-        url: `/api/api/show/getshowpro`,
+        url: dev_Url + `/api/show/getshowpro`,
         method: 'post',
         data: qs.stringify({ showId: id.id}),
     });
@@ -55,7 +55,7 @@ function _getshowpro(id) {
 function _getshows() {
     return request({
         baseURL: '',
-        url: `/api/api/show/getshows`,
+        url:  dev_Url + `/api/show/getshows`,
         method: 'post',
         data:'',
     });
@@ -65,7 +65,7 @@ function _getshows() {
 function _saveshowpro() {
     return request({
         baseURL: '',
-        url: `/api/api/show/saveshowpro`,
+        url: dev_Url + `/api/show/saveshowpro`,
         method: 'post',
         data:qs.stringify({
             
