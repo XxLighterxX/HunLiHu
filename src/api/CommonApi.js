@@ -15,11 +15,10 @@ function _getTestJson() {
 }
 // 用户登录
 function _userLogin(userInput) {
-    console.log(userInput)
     // 账号密码错误报404
     return request({
         baseURL: '',
-        url: `/api/login`,
+        url: dev_Url + `/login`,
         method: "post",
         data: qs.stringify({ username: userInput.username, password: userInput.password }),
     });

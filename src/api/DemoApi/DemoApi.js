@@ -12,7 +12,7 @@ function _userLogin(userInput) {
     // 账号密码错误报404
     return request({
         baseURL: '',
-        url: `/api/login`,
+        url: dev_Url + `/login`,
         method: "post",
         data: qs.stringify({ username: userInput.user, password: userInput.password }),
     });
@@ -22,7 +22,7 @@ function _showPage() {
     // 账号密码错误报404
     return request({
         baseURL: '',
-        url: `/api/api/page/getpages`,
+        url: dev_Url + `/api/page/getpages`,
         method: "post",
         data: qs.stringify({ showId: 348983 }),
     });
@@ -33,7 +33,7 @@ function _showPageList() {
     // 账号密码错误报404
     return request({
         baseURL: '',
-        url: `/api/api/show/getshows`,
+        url: dev_Url + `/api/show/getshows`,
         method: "post",
         data: '',
     });
@@ -44,10 +44,10 @@ function _addPage() {
     // 账号密码错误报404
     return request({
         baseURL: '',
-        url: `/api/api/show/createshow`,
+        url: dev_Url + `/api/show/createshow`,
         method: "post",
         data: '',
     });
 }
 
-export { _userLogin, _showPage, _addPage,_showPageList }
+export { _userLogin, _showPage, _addPage, _showPageList }
